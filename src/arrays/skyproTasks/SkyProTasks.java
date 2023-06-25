@@ -1,7 +1,5 @@
 package arrays.skyproTasks;
 
-import java.util.Arrays;
-
 public class SkyProTasks {
 
     public static void main(String[] args) {
