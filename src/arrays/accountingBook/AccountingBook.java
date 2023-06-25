@@ -17,8 +17,8 @@ public class AccountingBook {
 
         int[] arr = generateRandomArray();
         int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+        for (int j : arr) {
+            sum += j;
         }
         System.out.println("Сумма трат за месяц составила: " + sum + " рублей");
     }
@@ -29,11 +29,11 @@ public class AccountingBook {
         int[] arr = generateRandomArray();
         int minValue = arr[0];
         int maxValue = arr[0];
-        for (int i = 0; i < arr.length; i++) {
-            if (minValue < arr[i]) {
-                minValue = arr[i];
-            } else if (maxValue > arr[i]) {
-                maxValue = arr[i];
+        for (int j : arr) {
+            if (minValue < j) {
+                minValue = j;
+            } else if (maxValue > j) {
+                maxValue = j;
             }
         }
         System.out.println("Минимальная сумма трат за день составила: " + minValue + " рублей" + "\nМаксимальная сумма трат за день составила: " + maxValue + " рублей");
@@ -44,9 +44,9 @@ public class AccountingBook {
 
         int[] arr = generateRandomArray();
         int sum = 0;
-        double averageValue = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+        double averageValue;
+        for (int j : arr) {
+            sum += j;
         }
         averageValue = (double) sum / arr.length;
         System.out.println("Средняя сумма трат за день составила: " + averageValue + " рублей");
