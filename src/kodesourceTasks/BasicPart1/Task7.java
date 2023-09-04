@@ -1,4 +1,4 @@
-package kodesourceTasks.mainPart1;
+package kodesourceTasks.BasicPart1;
 
 import java.util.Scanner;
 
