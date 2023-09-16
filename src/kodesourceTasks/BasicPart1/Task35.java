@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Task35 {
     /**
-     * Напишите программу на Java для вычисления площади многоугольника */
+     * Напишите программу на Java для вычисления площади многоугольника
+     */
     public static void main(String[] args) {
 
 

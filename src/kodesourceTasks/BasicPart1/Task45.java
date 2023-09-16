@@ -2,7 +2,9 @@ package kodesourceTasks.BasicPart1;
 
 import java.io.File;
 
-/** Напишите программу на Java, чтобы найти размер указанного файла. */
+/**
+ * Напишите программу на Java, чтобы найти размер указанного файла.
+ */
 public class Task45 {
 
     public static void main(String[] args) {
@@ -22,7 +24,9 @@ public class Task45 {
     public static double getFileSizeInKiloBytes(File file) {
         return file.length() / 1024d;
 
-    } public static double getFileSizeInMegaBytes(File file) {
+    }
+
+    public static double getFileSizeInMegaBytes(File file) {
         return file.length() / (1024d * 1024d);
     }
 

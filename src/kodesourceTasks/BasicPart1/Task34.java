@@ -1,12 +1,11 @@
 package kodesourceTasks.BasicPart1;
 
 import java.util.Scanner;
-
+/**
+ * Напишите программу на Java для вычисления площади шестиугольника
+ */
 public class Task34 {
 
-    /**
-     * Напишите программу на Java для вычисления площади шестиугольника
-     */
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);

@@ -2,11 +2,10 @@ package kodesourceTasks.BasicPart1;
 
 import java.util.Scanner;
 
+/**
+ * Напишите программу на Java, которая принимает число в качестве входных данных и печатает свою таблицу умножения до 10.
+ */
 public class Task7 {
-
-    /**
-     * Напишите программу на Java, которая принимает число в качестве входных данных и печатает свою таблицу умножения до 10.
-     */
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
