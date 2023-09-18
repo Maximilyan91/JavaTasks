@@ -1,4 +1,4 @@
-package arrays.skyproTasks;
+package skyproTasks;
 
 public class SkyProTasks {
 
@@ -12,7 +12,7 @@ public class SkyProTasks {
 
         int[] arr = {1, 2, 3, 4, 5, 6, 7};
 
-        for (int i = arr.length - 1; i >= 0; i--) {
+        for (int i = arr.length-1; i >= 0; i--) {
             if (arr[i] > 1) {
                 System.out.print(arr[i] + ", ");
             } else {
@@ -20,15 +20,18 @@ public class SkyProTasks {
             }
         }
 
-        /*Пройдитесь по целочисленному массиву
-         и все нечетные числа в нем сделайте четными*/
+        /*
+         * Пройдитесь по целочисленному массиву
+         * и все нечетные числа в нем сделайте четными
+         */
 
         System.out.println("\nЗадача №2");
 
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] % 2 != 0) {
                 arr[i] += 1;
-            }System.out.print(arr[i] + " ");
+            }
+            System.out.print(arr[i] + " ");
         }
     }
 }

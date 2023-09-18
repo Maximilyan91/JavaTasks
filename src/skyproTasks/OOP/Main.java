@@ -1,4 +1,4 @@
-package arrays.skyproTasks.OOP;
+package skyproTasks.OOP;
 
 public class Main {
 

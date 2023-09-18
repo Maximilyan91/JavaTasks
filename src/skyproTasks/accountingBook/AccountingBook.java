@@ -1,4 +1,4 @@
-package arrays.accountingBook;
+package skyproTasks.accountingBook;
 
 import java.util.Random;
 
