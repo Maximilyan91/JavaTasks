@@ -1,4 +1,4 @@
-package skyproTasks;
+package skyproTasks.primitives;
 
 public class SkyProTasks {
 

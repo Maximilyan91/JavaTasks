@@ -1,4 +1,4 @@
-package skyproTasks.OOP;
+package skyproTasks.OOP.Lesson1_Object;
 
 public class Main {
 
