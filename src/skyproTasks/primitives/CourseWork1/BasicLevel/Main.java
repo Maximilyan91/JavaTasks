@@ -1,4 +1,4 @@
-package skyproTasks.primitives.coursework1BasicLvl;
+package skyproTasks.primitives.CourseWork1.BasicLevel;
 
 public class Main {
     public static void main(String[] args) {
