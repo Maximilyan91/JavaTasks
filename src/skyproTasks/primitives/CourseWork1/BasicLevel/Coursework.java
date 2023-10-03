@@ -1,4 +1,4 @@
-package skyproTasks.primitives.coursework1BasicLvl;
+package skyproTasks.primitives.CourseWork1.BasicLevel;
 
 public class Coursework {
 
@@ -6,7 +6,8 @@ public class Coursework {
             new Employee("Андрей Бенедиктович Фарс", 10000, 1),
             new Employee("Сюзанна Калитковна Блеск", 3000, 2),
             new Employee("Борис Илларионович Пупкин", 8000, 3),
-            new Employee("Джони Савельевич Подливкин", 2000, 2)
+            new Employee("Джони Савельевич Подливкин", 2000, 2),
+            null
     };
 
     public static void printAllEmpls() {
@@ -18,7 +19,9 @@ public class Coursework {
     public static int allSalaries() {
         int sum = 0;
         for (Employee empl : employees) {
-            sum += empl.getSalary();
+            if (empl != null) {
+                sum += empl.getSalary();
+            }
         }
         return sum;
     }
@@ -27,7 +30,7 @@ public class Coursework {
         int minSalary = Integer.MAX_VALUE;
         Employee minSalaryEmpl = employees[0];
         for (Employee empl : employees) {
-            if (empl.getSalary() < minSalary) {
+            if (empl != null && empl.getSalary() < minSalary) {
                 minSalary = empl.getSalary();
                 minSalaryEmpl = empl;
             }
@@ -39,7 +42,7 @@ public class Coursework {
         int maxSalary = 0;
         Employee maxSalaryEmpl = employees[0];
         for (Employee empl : employees) {
-            if (empl.getSalary() > maxSalary) {
+            if (empl != null && empl.getSalary() > maxSalary) {
                 maxSalary = empl.getSalary();
                 maxSalaryEmpl = empl;
             }
@@ -48,12 +51,15 @@ public class Coursework {
     }
 
     public static double averageSalary() {
+
         return (double) allSalaries() / employees.length;
     }
 
     public static void getAllNames() {
         for (Employee empl : employees) {
-            System.out.println(empl.getName());
+            if (empl != null) {
+                System.out.println(empl.getName());
+            }
         }
     }
 }
