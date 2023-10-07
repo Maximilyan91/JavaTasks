@@ -1,5 +1,6 @@
 package skyproTasks.OOP.Lesson3_Inheritance;
 
+import skyproTasks.OOP.Lesson3_Inheritance.transport.Bus;
 import skyproTasks.OOP.Lesson3_Inheritance.transport.Car;
 
 public class Main {
@@ -46,9 +47,13 @@ public class Main {
                 "ews",
                 "",
                 -7,
-                null);
+                null, -220);
         System.out.println(testCar + "\n");
 
+        Bus paz = new Bus("PAZ", "12", 1980, "USSR", "Black");
+        Bus icarus = new Bus("Icarus", "50", 2001, "Czech", "white");
+        Bus testBus = new Bus("testBus", "  ", 1980, "Country", "Color", -50);
+        System.out.println(testBus);
     }
 
 

@@ -2,7 +2,7 @@ package skyproTasks.OOP.Lesson3_Inheritance.transport;
 
 import java.time.LocalDate;
 
-public class Car {
+public class Car extends Transport {
 
 
     public static class Key {
@@ -29,19 +29,15 @@ public class Car {
              (keylessAccess ? " бесключевой доступ ":" бесключевой доступ отсутствует ");
         }
     }
-
-    private final String brand;
-    private final String model;
-    private final int yearOfProduction;
-    private final String countryOfProduction;
     private final String bodyType;
     private final int capacity;
     private float engineVolume;
-    private String color;
     private String gearBox;
     private String regNumber;
     private boolean winterTires;
     private  Key key;
+
+
 
     public Car(String brand,
                String model,
@@ -53,50 +49,13 @@ public class Car {
                String bodyType,
                String regNumber,
                int capacity,
-               Key key) {
+               Key key,
+               int maxSpeed) {
 
+        super(brand, model, yearOfProduction, countryOfProduction, color, maxSpeed);
 
-        if (checkIncorrectData(brand)) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-
-        if (checkIncorrectData(model)) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
-
-        if (engineVolume <= 0f) {
-            this.engineVolume = 1.5f;
-        } else {
-            this.engineVolume = engineVolume;
-        }
-
-        if (checkIncorrectData(color)) {
-            this.color = "white";
-        } else {
-            this.color = color;
-        }
-
-        if (yearOfProduction >= 0) {
-            this.yearOfProduction = 2000;
-        } else {
-            this.yearOfProduction = yearOfProduction;
-        }
-
-        if (checkIncorrectData(countryOfProduction)) {
-            this.countryOfProduction = "default";
-        } else {
-            this.countryOfProduction = countryOfProduction;
-        }
-
-        if (checkIncorrectData(gearBox)) {
-            this.gearBox = "manual gearbox";
-        } else {
-            this.gearBox = gearBox;
-        }
+        setEngineVolume(engineVolume);
+        setGearBox(gearBox);
 
         if (checkIncorrectData(bodyType)) {
             this.bodyType = "sedan";
@@ -104,11 +63,7 @@ public class Car {
             this.bodyType = bodyType;
         }
 
-        if (checkIncorrectData(regNumber)) {
-            this.regNumber = "a000aa00";
-        } else {
-            this.regNumber = regNumber;
-        }
+        setRegNumber(regNumber);
 
         if (capacity <= 0) {
             this.capacity = 5;
@@ -120,9 +75,29 @@ public class Car {
 
         setKey(key);
     }
-
-    private boolean checkIncorrectData(String string) {
-        return string == null || string.isEmpty() || string.isBlank();
+    public Car(String brand,
+               String model,
+               float engineVolume,
+               String color,
+               int yearOfProduction,
+               String countryOfProduction,
+               String gearBox,
+               String bodyType,
+               String regNumber,
+               int capacity,
+               Key key) {
+        this(brand,
+                model,
+                engineVolume,
+                color,
+                yearOfProduction,
+                countryOfProduction,
+                gearBox,
+                bodyType,
+                regNumber,
+                capacity,
+                key,
+                0);
     }
 
     public boolean changeTiresForSeason() {
@@ -130,36 +105,17 @@ public class Car {
         return month >= 10 || month <= 3;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
 
     public float getEngineVolume() {
         return engineVolume;
     }
 
     public void setEngineVolume(float engineVolume) {
-        this.engineVolume = engineVolume;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public int getYearOfProduction() {
-        return yearOfProduction;
-    }
-
-    public String getCountryOfProduction() {
-        return countryOfProduction;
+        if (engineVolume <= 0f) {
+            this.engineVolume = 1.5f;
+        } else {
+            this.engineVolume = engineVolume;
+        }
     }
 
     public String getGearBox() {
@@ -167,7 +123,11 @@ public class Car {
     }
 
     public void setGearBox(String gearBox) {
-        this.gearBox = gearBox;
+        if (checkIncorrectData(gearBox)) {
+            this.gearBox = "manual gearbox";
+        } else {
+            this.gearBox = gearBox;
+        }
     }
 
     public String getBodyType() {
@@ -179,7 +139,11 @@ public class Car {
     }
 
     public void setRegNumber(String regNumber) {
-        this.regNumber = regNumber;
+        if (checkIncorrectData(regNumber)) {
+            this.regNumber = "a000aa00";
+        } else {
+            this.regNumber = regNumber;
+        }
     }
 
     public int getCapacity() {
@@ -207,17 +171,18 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Автомобиль: " + brand + " " + model +
-                "\nГод выпуска: " + yearOfProduction +
-                "\nЦвет: " + color +
+        return "Автомобиль: " + getBrand() + " " + getModel() +
+                "\nГод выпуска: " + getYearOfProduction() +
+                "\nЦвет: " + getColor() +
                 "\nОбъем двигателя: " + engineVolume + " л." +
-                "\nСтрана производства: " + countryOfProduction +
+                "\nСтрана производства: " + getCountryOfProduction() +
                 "\nКоробка передач: " + gearBox +
                 "\nКузов: " + bodyType +
                 "\nРег. номер: " + regNumber +
                 "\nВместимость пассажиров: " + capacity +
                 "\nЗимняя резина: " + winterTires +
-                "\n" + key;
+                "\n" + key +
+                "\nМаксимальная скорость: " + getMaxSpeed();
 
     }
 }
