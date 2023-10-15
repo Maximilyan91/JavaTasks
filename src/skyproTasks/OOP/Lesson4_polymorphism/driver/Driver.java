@@ -1,24 +1,27 @@
 package skyproTasks.OOP.Lesson4_polymorphism.driver;
 
-public class Driver {
+public abstract class Driver {
 
-    private String fullName;
+    private final String fullName;
 
     private boolean validLicense;
 
-    private String experience;
+    private int experience;
 
 
-    public Driver(String fullName, boolean validLicense, String experience) {
+    public Driver(String fullName, boolean validLicense, int experience) {
         this.fullName = fullName;
         this.validLicense = validLicense;
         this.experience = experience;
     }
 
+    public abstract void startMoving();
+    public abstract void stopMoving();
+    public abstract void reFuel();
+
     public String getFullName() {
         return fullName;
     }
-
 
     public boolean isValidLicense() {
         return validLicense;
@@ -28,11 +31,20 @@ public class Driver {
         this.validLicense = validLicense;
     }
 
-    public String getExperience() {
+    public int getExperience() {
         return experience;
     }
 
-    public void setExperience(String experience) {
+    public void setExperience(int experience) {
         this.experience = experience;
+    }
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "fullName='" + fullName + '\'' +
+                ", validLicense=" + validLicense +
+                ", experience=" + experience +
+                '}';
     }
 }

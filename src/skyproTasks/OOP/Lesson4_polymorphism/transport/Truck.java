@@ -1,9 +1,11 @@
 package skyproTasks.OOP.Lesson4_polymorphism.transport;
 
-public class Truck extends Transport implements Racing{
+import skyproTasks.OOP.Lesson4_polymorphism.driver.DriverD;
 
-    public Truck(String brand, String model, Double engineVolume) {
-        super(brand, model, engineVolume);
+public class Truck extends Transport<DriverD> implements Racing{
+
+    public Truck(String brand, String model, Double engineVolume, DriverD driverD) {
+        super(brand, model, engineVolume, driverD);
     }
 
     @Override

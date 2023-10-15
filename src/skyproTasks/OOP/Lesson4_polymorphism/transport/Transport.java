@@ -1,20 +1,25 @@
 package skyproTasks.OOP.Lesson4_polymorphism.transport;
 
 
+import skyproTasks.OOP.Lesson4_polymorphism.driver.Driver;
+
 import java.util.Objects;
 
 import static java.lang.Math.abs;
 
-public abstract class Transport {
+public abstract class Transport<T extends Driver> {
 
     private final String brand;
     private final String model;
     private Double engineVolume;
 
-    public Transport(String brand, String model, Double engineVolume) {
+    private T driver;
+
+    public Transport(String brand, String model, Double engineVolume, T driver) {
         this.brand = checkCorrectString(brand) ? brand : "default brand";
         this.model = checkCorrectString(model) ? model : "default model";
         setEngineVolume(engineVolume);
+        this.driver = driver;
         }
 
     public abstract void startMoving();
@@ -34,6 +39,14 @@ public abstract class Transport {
 
     public Double getEngineVolume() {
         return engineVolume;
+    }
+
+    public T getDriver() {
+        return driver;
+    }
+
+    public void setDriver(T driver) {
+        this.driver = driver;
     }
 
     public void setEngineVolume(Double engineVolume) {
