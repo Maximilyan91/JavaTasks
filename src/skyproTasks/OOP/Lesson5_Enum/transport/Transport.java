@@ -16,9 +16,10 @@ public abstract class Transport<T extends Driver> {
         this.model = checkCorrectString(model) ? model : "default model";
         setEngineVolume(engineVolume);
         this.driver = driver;
-        }
+    }
 
     public abstract void startMoving();
+
     public abstract void stopMoving();
 
     public boolean checkCorrectString(String s) {
@@ -37,16 +38,8 @@ public abstract class Transport<T extends Driver> {
         return engineVolume;
     }
 
-    public T getDriver() {
-        return driver;
-    }
-
-    public void setDriver(T driver) {
-        this.driver = driver;
-    }
-
     public void setEngineVolume(Double engineVolume) {
-        if ( engineVolume != null && engineVolume < 0) {
+        if (engineVolume != null && engineVolume < 0) {
             this.engineVolume = Math.abs(engineVolume);
         } else if (engineVolume == null || engineVolume == 0) {
             this.engineVolume = 1.0;
@@ -54,6 +47,14 @@ public abstract class Transport<T extends Driver> {
             this.engineVolume = engineVolume;
         }
 
+    }
+
+    public T getDriver() {
+        return driver;
+    }
+
+    public void setDriver(T driver) {
+        this.driver = driver;
     }
 
     @Override

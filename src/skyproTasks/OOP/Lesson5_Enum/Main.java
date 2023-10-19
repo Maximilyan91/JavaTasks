@@ -12,7 +12,7 @@ public class Main {
                 1.8,
                 new DriverB("Max",
                         true,
-                        13));
+                        13), Car.BodyType.SEDAN);
 
         printMessage(car);
     }
