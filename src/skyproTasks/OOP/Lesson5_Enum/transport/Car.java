@@ -4,11 +4,9 @@ import skyproTasks.OOP.Lesson5_Enum.driver.DriverB;
 
 public class Car extends Transport<DriverB> implements Racing {
 
-    private final BodyType bodyType;
 
-    public Car(String brand, String model, Double engineVolume, DriverB driverB, BodyType bodyType) {
-        super(brand, model, engineVolume, driverB);
-        this.bodyType = bodyType;
+    public Car(String brand, String model, Double engineVolume, DriverB driverB) {
+        super(brand, model, engineVolume, driverB);;
     }
 
     @Override
@@ -36,36 +34,5 @@ public class Car extends Transport<DriverB> implements Racing {
         System.out.println("Максимальная скорость автомобиля " + getBrand() + " " + getModel() + " 180 км/ч");
     }
 
-    public BodyType getBodyType() {
-        return bodyType;
-    }
-
-    public enum BodyType {
-        SEDAN("Седан"),
-        HATCHBACK("Хетчбек"),
-        COUPE("Купе"),
-        WAGOON("Универсал"),
-        SUV("Внедорожник"),
-        CROSSOVER("Кроссовер"),
-        PICKUP("Пикап"),
-        VAN("Фургон"),
-        MINIVAN("Минивэн");
-        private final String bodyType;
-
-        BodyType(String bodyType) {
-            this.bodyType = bodyType;
-        }
-
-        public String getBodyType() {
-            return bodyType;
-        }
-
-        @Override
-        public String toString() {
-            return "Тип кузова: "
-                    + bodyType;
-        }
-
-    }
 }
 
