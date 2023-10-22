@@ -18,6 +18,8 @@ public abstract class Transport<T extends Driver> {
         this.driver = driver;
     }
 
+    public abstract void printType();
+
     public abstract void startMoving();
 
     public abstract void stopMoving();

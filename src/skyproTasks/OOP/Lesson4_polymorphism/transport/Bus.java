@@ -3,8 +3,6 @@ package skyproTasks.OOP.Lesson4_polymorphism.transport;
 import skyproTasks.OOP.Lesson4_polymorphism.driver.DriverD;
 
 public class Bus extends Transport<DriverD> implements Racing {
-
-
     public Bus(String brand, String model, Double engineVolume, DriverD driver) {
         super(brand, model, engineVolume, driver);
     }
@@ -28,7 +26,6 @@ public class Bus extends Transport<DriverD> implements Racing {
     public void bestTimeLap() {
         System.out.println("Лучшее время круга автобуса " + getBrand() + " " + getModel() + " 03:45");
     }
-
     @Override
     public void maxSPeed() {
         System.out.println("Максимальная скорость автобуса " + getBrand() + " " + getModel() + " 90 км/ч");

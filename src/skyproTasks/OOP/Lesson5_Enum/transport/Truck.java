@@ -1,11 +1,24 @@
 package skyproTasks.OOP.Lesson5_Enum.transport;
 
 import skyproTasks.OOP.Lesson5_Enum.driver.DriverD;
+import skyproTasks.OOP.Lesson5_Enum.transport.enumerations.Tonnage;
 
 public class Truck extends Transport<DriverD> implements Racing {
 
-    public Truck(String brand, String model, Double engineVolume, DriverD driverD) {
+    private Tonnage tonnage;
+
+    public Truck(String brand, String model, Double engineVolume, Tonnage tonnage, DriverD driverD) {
         super(brand, model, engineVolume, driverD);
+        setTonnage(tonnage);
+    }
+
+    @Override
+    public void printType() {
+        if (tonnage == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println("Кузов автомобиля " + getBrand() + " " + getModel() + " - " + tonnage);
+        }
     }
 
     @Override
@@ -31,5 +44,13 @@ public class Truck extends Transport<DriverD> implements Racing {
     @Override
     public void maxSPeed() {
         System.out.println("Максимальная скорость грузовика " + getBrand() + " " + getModel() + " 120 км/ч");
+    }
+
+    public Tonnage getTonnage() {
+        return tonnage;
+    }
+
+    public void setTonnage(Tonnage tonnage) {
+        this.tonnage = tonnage;
     }
 }

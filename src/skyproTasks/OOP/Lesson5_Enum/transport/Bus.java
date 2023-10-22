@@ -1,12 +1,24 @@
 package skyproTasks.OOP.Lesson5_Enum.transport;
 
 import skyproTasks.OOP.Lesson5_Enum.driver.DriverD;
+import skyproTasks.OOP.Lesson5_Enum.transport.enumerations.Capacity;
 
 public class Bus extends Transport<DriverD> implements Racing {
 
-
-    public Bus(String brand, String model, Double engineVolume, DriverD driver) {
+    private Capacity capacity;
+    public Bus(String brand, String model, Double engineVolume, Capacity capacity, DriverD driver) {
         super(brand, model, engineVolume, driver);
+
+        setCapacity(capacity);
+    }
+
+    @Override
+    public void printType() {
+        if (capacity == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println("Вместимость автобуса " + getBrand() + " " + getModel() + " - " + capacity);
+        }
     }
 
     @Override
@@ -32,5 +44,13 @@ public class Bus extends Transport<DriverD> implements Racing {
     @Override
     public void maxSPeed() {
         System.out.println("Максимальная скорость автобуса " + getBrand() + " " + getModel() + " 90 км/ч");
+    }
+
+    public Capacity getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
     }
 }

@@ -1,12 +1,24 @@
 package skyproTasks.OOP.Lesson5_Enum.transport;
 
 import skyproTasks.OOP.Lesson5_Enum.driver.DriverB;
+import skyproTasks.OOP.Lesson5_Enum.transport.enumerations.BodyType;
 
 public class Car extends Transport<DriverB> implements Racing {
 
+    private BodyType bodyType;
+    public Car(String brand, String model, Double engineVolume, BodyType bodyType, DriverB driverB) {
+        super(brand, model, engineVolume, driverB);
 
-    public Car(String brand, String model, Double engineVolume, DriverB driverB) {
-        super(brand, model, engineVolume, driverB);;
+        setBodyType(bodyType);
+    }
+
+    @Override
+    public void printType() {
+        if (bodyType == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println("Кузов автомобиля " + getBrand() + " " + getModel() + " - " + bodyType);
+        }
     }
 
     @Override
@@ -27,6 +39,14 @@ public class Car extends Transport<DriverB> implements Racing {
     @Override
     public void bestTimeLap() {
         System.out.println("Лучшее время круга автомобиля " + getBrand() + " " + getModel() + " 03:17");
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
     }
 
     @Override
