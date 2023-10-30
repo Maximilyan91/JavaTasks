@@ -11,7 +11,7 @@ public abstract class Driver {
 
     public Driver(String fullName, boolean validLicense, int experience) {
         this.fullName = fullName;
-        this.validLicense = validLicense;
+        setValidLicense(validLicense);
         this.experience = experience;
     }
 
@@ -28,7 +28,13 @@ public abstract class Driver {
     }
 
     public void setValidLicense(boolean validLicense) {
-        this.validLicense = validLicense;
+        if (validLicense) {
+            this.validLicense = true;
+        } else {
+            throw new IllegalArgumentException("Необходимо указать тип прав!");
+        }
+
+
     }
 
     public int getExperience() {

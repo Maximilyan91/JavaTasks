@@ -32,6 +32,11 @@ public class Car extends Transport<DriverB> implements Racing {
     }
 
     @Override
+    public void passDiagnostic() {
+        System.out.println( "Автомобиль " + getBrand() + " " + getModel() + " прошел диагностику");
+    }
+
+    @Override
     public void pitStop() {
         System.out.println("Автомобиль " + getBrand() + " " + getModel() + " заехал на пит-стоп");
     }

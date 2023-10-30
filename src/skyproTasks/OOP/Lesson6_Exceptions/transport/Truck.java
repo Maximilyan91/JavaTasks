@@ -32,6 +32,11 @@ public class Truck extends Transport<DriverD> implements Racing {
     }
 
     @Override
+    public void passDiagnostic() {
+        System.out.println( "Грузовик " + getBrand() + " " + getModel() + " прошел диагностику");
+    }
+
+    @Override
     public void pitStop() {
         System.out.println("Грузовик " + getBrand() + " " + getModel() + " заехал на пит-стоп");
     }

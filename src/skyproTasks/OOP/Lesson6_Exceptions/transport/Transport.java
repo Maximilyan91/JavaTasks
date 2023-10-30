@@ -2,6 +2,7 @@ package skyproTasks.OOP.Lesson6_Exceptions.transport;
 
 
 import skyproTasks.OOP.Lesson6_Exceptions.driver.Driver;
+import skyproTasks.OOP.Lesson6_Exceptions.exceptions.CantPassDiagnosticException;
 
 public abstract class Transport<T extends Driver> {
 
@@ -24,9 +25,7 @@ public abstract class Transport<T extends Driver> {
 
     public abstract void stopMoving();
 
-    public void passDiagnostic(){
-        System.out.printf("Автомобиль %s %s проходит диагностику%n", getBrand(), getModel());
-    }
+    public abstract void passDiagnostic() throws CantPassDiagnosticException;
 
     public boolean checkCorrectString(String s) {
         return s != null && !s.isEmpty() && !s.isBlank();

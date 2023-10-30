@@ -1,6 +1,7 @@
 package skyproTasks.OOP.Lesson6_Exceptions.transport;
 
 import skyproTasks.OOP.Lesson6_Exceptions.driver.DriverD;
+import skyproTasks.OOP.Lesson6_Exceptions.exceptions.CantPassDiagnosticException;
 import skyproTasks.OOP.Lesson6_Exceptions.transport.enumerations.Capacity;
 
 public class Bus extends Transport<DriverD> implements Racing {
@@ -29,6 +30,11 @@ public class Bus extends Transport<DriverD> implements Racing {
     @Override
     public void stopMoving() {
         System.out.println("Автобус " + getBrand() + " " + getModel() + " закончил движение");
+    }
+
+    @Override
+    public void passDiagnostic() throws CantPassDiagnosticException {
+        throw new CantPassDiagnosticException("Автобус не может проходить диагностику");
     }
 
     @Override
