@@ -2,7 +2,7 @@ package skyproTasks.OOP.Lesson7_List_and_Queue.mechanic;
 
 import skyproTasks.OOP.Lesson7_List_and_Queue.transport.Transport;
 
-public class Mechanic<T extends Transport<?>> {
+public class Mechanic {
 
     private final String name;
 
@@ -17,8 +17,10 @@ public class Mechanic<T extends Transport<?>> {
         this.workCompany = workCompany;
     }
 
-    public void doService(T... transports) {
-        for (T transport : transports) {
+
+
+    public  void doService(Transport<?>... transports) {
+        for (Transport<?> transport : transports) {
             System.out.println("Механик " + getSurName()
                     + " " + getName()
                     + " провел техобслуживание автомобиля "
@@ -27,14 +29,13 @@ public class Mechanic<T extends Transport<?>> {
         }
     }
 
-    public void fixTheCar(T... transports) {
-        for (T transport : transports) {
+    public void fixTheCar(Transport<?>... transports) {
+        for (Transport<?> transport : transports) {
             System.out.println("Механик " + getSurName()
                     + " " + getName()
                     + " провел техобслуживание автомобиля "
                     + transport.getBrand()
                     + " " + transport.getModel());
-
         }
     }
 

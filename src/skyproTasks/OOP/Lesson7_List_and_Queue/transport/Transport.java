@@ -3,13 +3,17 @@ package skyproTasks.OOP.Lesson7_List_and_Queue.transport;
 
 import skyproTasks.OOP.Lesson7_List_and_Queue.driver.Driver;
 import skyproTasks.OOP.Lesson7_List_and_Queue.exception.CantPassDiagnosticException;
+import skyproTasks.OOP.Lesson7_List_and_Queue.mechanic.Mechanic;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Transport<T extends Driver> {
 
     private final String brand;
     private final String model;
     private Double engineVolume;
-
+    private List<Mechanic> mechanicList = new ArrayList<>();
     private T driver;
 
     public Transport(String brand, String model, Double engineVolume, T driver) {
@@ -25,11 +29,22 @@ public abstract class Transport<T extends Driver> {
 
     public abstract void stopMoving();
 
+    public void addMechanic(Mechanic mechanic) {
+        mechanicList.add(mechanic);
+    }
+
     public abstract void passDiagnostic() throws CantPassDiagnosticException;
 
     public boolean checkCorrectString(String s) {
         return s != null && !s.isEmpty() && !s.isBlank();
     }
+
+    public String getMechanicList() {
+        return "У автомобиля " + brand + " " + model
+                + " водитель " + getDriver().getFullName()
+                + " есть механики " + mechanicList;
+    }
+
 
     public String getBrand() {
         return brand;
