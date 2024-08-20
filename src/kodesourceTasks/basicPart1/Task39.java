@@ -1,4 +1,4 @@
-package kodesourceTasks.BasicPart1;
+package kodesourceTasks.basicPart1;
 
 import java.util.Arrays;
 

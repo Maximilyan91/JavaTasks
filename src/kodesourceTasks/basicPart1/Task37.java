@@ -1,4 +1,4 @@
-package kodesourceTasks.BasicPart1;
+package kodesourceTasks.basicPart1;
 
 /**
  * Напишите программу на Java, чтобы перевернуть строку
